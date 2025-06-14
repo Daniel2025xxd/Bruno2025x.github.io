@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Feliz Día del Padre!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #f0f0f0, #dbe9f4);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #053d70;
+      color: white;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    header:hover {
+      background: #065199;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    .mensaje {
+      margin: 2rem auto;
+      padding: 1.5rem;
+      max-width: 700px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease;
+    }
+
+    .mensaje p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .frase-extra {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #053d70;
+      margin-top: 1rem;
+    }
+
+    .imagen {
+      margin: 2rem auto;
+      transition: transform 0.5s;
+    }
+
+    .imagen img {
+      width: 300px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .imagen:hover {
+      transform: scale(1.03);
+    }
+
+    .boton-dedicatoria {
+      background-color: #053d70;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .boton-dedicatoria:hover {
+      background-color: #065199;
+    }
+
+    footer {
+      background: #042b52;
+      color: white;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .corazones {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .corazon {
+      position: absolute;
+      color: red;
+      font-size: 1.5rem;
+      animation: flotar 4s ease-in infinite;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-300px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música de fondo (opcional, puede comentar si no se desea sonido) -->
+  <audio autoplay loop hidden>
+    <source src="AUDIO/musica-dulce.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <header>
+    <h1>💙 ¡Feliz Día del Padre! 💙</h1>
+  </header>
+
+  <div class="mensaje">
+    <p>Gracias, papá, por cada consejo, por tu paciencia infinita y por estar siempre ahí. Hoy celebramos tu fuerza, tu amor y todo lo que haces por nosotros. ¡Te queremos mucho!</p>
+ Que Dios te bendiga con salud, paz y alegría. Que nunca te falte la luz del Señor guiando tus pasos y tu vida.Sos un gran papá, y cada día valoramos tu esfuerzo te queremos mucho.
+    <p><strong>¡Que tengas un día maravilloso!</strong></p>
+    <p class="frase-extra">“Un padre es el primer héroe de su hijo y el primer amor de su hija.”</p>
+    <button class="boton-dedicatoria" onclick="alert('¡Te amamos papá! Esta página es para vos 💙')">Enviar dedicatoria</button>
+  </div>
+
+  <div class="imagen">
+    <img src="IMAGEN/Feliz dia del Padre.jpg" alt="Feliz Día del Padre">
+  </div>
+
+  <footer>
+    ❤️ Hecho con amor y aprecio ❤️
+  </footer>
+
+  <!-- Corazones flotantes -->
+  <div class="corazones" id="corazones"></div>
+
+  <script>
+    const corazones = document.getElementById("corazones");
+    setInterval(() => {
+      const corazon = document.createElement("div");
+      corazon.className = "corazon";
+      corazon.innerText = "❤️";
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazones.appendChild(corazon);
+      setTimeout(() => corazones.removeChild(corazon), 4000);
+    }, 400);
+  </script>
+
+</body>
+</html>
